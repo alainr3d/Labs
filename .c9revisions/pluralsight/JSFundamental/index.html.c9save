@@ -1,0 +1,2 @@
+{"ts":1353021138039,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<!DOCTYPE html>\n<html>\n    <head>\n        <title> </title>\n    </head>\n    <body>\n\n    </body>\n</html>\n"]],"start1":0,"start2":0,"length1":0,"length2":103}]],"length":103}
+{"contributors":[],"silentsave":false,"ts":1352980073946,"patch":[[{"diffs":[[0,"/title>\n"],[1,"        <script>\n        function write(message){\n            \n        }\n        </script>\n        \n"],[0,"    </he"]],"start1":51,"start2":51,"length1":16,"length2":116}]],"length":203,"saved":false}
