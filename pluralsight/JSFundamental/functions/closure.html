@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <script type="text/javascript">
+        //CLOSURE
+        
+        /*
+        functions may be nested
+        inner functions have access to vars defined outside of inner function        
+        */
+        
+        var a = "a";
+        
+        var outer = function(){
+            
+            var b = "b";
+            
+            var middle = function(){
+                
+                var c = "c";
+                
+                var inner = function(){
+                    write(a+b+c);
+                }
+                
+            }
+            
+        }
+        
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

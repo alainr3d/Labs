@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <script type="text/javascript">
+        // ctrl+space for autocomplete
+        
+        //everything is an object
+        
+        //standard
+        function square(x)
+        {
+            return x*x;
+        }
+        
+        //variable set function
+        var squareFunc = function square(x)
+        {
+            return x*x;
+        };
+        
+        //variable set ANONYMOUS function
+        var squareFunc = function (x)
+        {
+            return x*x;
+        };
+        
+        //anonymous immidiately invoked
+        //protects global pollution
+        //varialble aliasing
+        (function(x){
+            return x*x;
+        })(numberToSquare);
+        
+        //jquery plugin sample
+        (function($){
+            //implement jquery
+            })(jQuery);
+        
+        //INVOCATION
+        var squareFunc = function (x)
+        {
+            return x*x;
+        };
+        
+        function square(x)
+        {
+            return x*x;
+        };
+        
+        square(70);
+        
+        function add(num1,num2,num3){
+            return num + num2 + num3;
+        };
+        
+        function add(num1,num2){
+            return num + num2;
+        };
+        
+        //javsacript NO function overloading
+        //name is the game
+        //extra param is ignored
+        //Object params by reference
+        
+        //!!!!!function retain value if passed by object
+        //!!!!!function retains reference if passed by primitive
+        
+        // ARGUMENTS OBJECT
+        
+        /*
+        local variable available within all functions
+        contains the functions parameters
+        indexed like an array
+        Has a length property
+        
+        */
+        
+        function argumentsType(){
+            return typeof arguments;
+        }
+        
+        console.log(argumentsType("a"));
+        
+        // RECURSION
+        /*
+        a function may call itself
+        
+        its like a loop
+        make sure check for a good exit (another return statement if meet condition)
+        */
+        (function factorial(n){
+        if(n===0 || n ===1){
+            return 1;
+        }
+        return n * factorial(n - 1);
+        })(5);
+        
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
