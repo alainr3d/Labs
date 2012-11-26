@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <link rel="stylesheet" href="qunit.css" type="text/css" />
+        <script type="text/javascript">
+        //TESTING
+        
+        /*
+        Why
+        to catch bugs that a complier would normally pickup
+        
+        Qunit
+        
+        Modules declared with
+        
+        module(moduleName);
+        
+        Tests
+        
+        test(testName, callback);
+        
+        Assertions
+        
+        ok()
+        equal()
+        deepEqual()
+        */
+        
+        
+        </script>
+    </head>
+    <body>
+    <div id="qunit"></div>
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="qunit.js"></script>
+    <script type="text/javascript">
+    module("ok assertion");
+    
+    test("passiong test", function(){
+            ok(true,"this test passes");
+        });
+        
+    test("failiure test", function(){
+            ok(false,"this test fails");
+        });
+        
+    module("equal assertion");
+    
+    test("equal pass", function(){
+            equal(1+1,7,"equal fail");
+    });
+    
+    
+    </script>
+    </body>
+</html>
