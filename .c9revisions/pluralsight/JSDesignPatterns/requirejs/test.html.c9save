@@ -1,0 +1,8 @@
+{"ts":1353979802077,"silentsave":true,"restoring":false,"patch":[[{"diffs":[[1,"<!DOCTYPE html>\n<html>\n    <head>\n        <title> </title>\n    </head>\n    <body>\n\n    </body>\n</html>\n"]],"start1":0,"start2":0,"length1":0,"length2":103}]],"length":103}
+{"contributors":[],"silentsave":false,"ts":1353979853888,"patch":[[{"diffs":[[0,"/title>\n"],[1,"        <script type=\"text/javascript\" src=\"require.js\"></script>\n"],[0,"    </he"]],"start1":51,"start2":51,"length1":16,"length2":82}]],"length":169,"saved":false}
+{"ts":1353979896463,"patch":[[{"diffs":[[0,"uire.js\""],[1," data-main=\"/scripts/main\""],[0,"></scrip"]],"start1":106,"start2":106,"length1":16,"length2":42}]],"length":195,"saved":false}
+{"ts":1353979917667,"patch":[[{"diffs":[[0,"s/main\">"],[1,"\n            \n        "],[0,"</script"]],"start1":133,"start2":133,"length1":16,"length2":38}]],"length":217,"saved":false}
+{"ts":1353979941516,"patch":[[{"diffs":[[0,"in=\""],[-1,"/scripts/"],[0,"main"]],"start1":122,"start2":122,"length1":17,"length2":8}]],"length":208,"saved":false}
+{"ts":1353980391702,"patch":[[{"diffs":[[0,"t\" src=\""],[1,"/"],[0,"require."]],"start1":95,"start2":95,"length1":16,"length2":17}]],"length":209,"saved":false}
+{"ts":1353980429619,"patch":[[{"diffs":[[0,"\" src=\"/"],[1,"alainr3d/labs/workspace/pluralsight/JSDesignPatterns/requirejs/"],[0,"require."]],"start1":96,"start2":96,"length1":16,"length2":79}]],"length":272,"saved":false}
+{"ts":1353980446176,"patch":[[{"diffs":[[0,"a-main=\""],[1,"/alainr3d/labs/workspace/pluralsight/JSDesignPatterns/requirejs/"],[0,"main\">\n "]],"start1":182,"start2":182,"length1":16,"length2":80}]],"length":336,"saved":false}
