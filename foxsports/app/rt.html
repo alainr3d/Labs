@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title> - jsFiddle demo by alainr3d</title>
+  
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+  
+  <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  <script type='text/javascript' src="http://documentcloud.github.com/underscore/underscore.js"></script>
+  <script type='text/javascript' src="http://documentcloud.github.com/backbone/backbone.js"></script>
+  <script type='text/javascript' src="http://cloud.github.com/downloads/wycats/handlebars.js/handlebars-1.0.rc.1.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css">
+    
+  <style type='text/css'>
+    * {font-family:'lucida grande',tahoma,verdana,arial,sans-serif,arial;
+font-size:11px;
+color:#333333;
+}
+
+body{background-color:#a90000}
+
+.app{
+    max-width:954px;
+    padding:15px;
+    margin:0 auto;
+    overflow:auto;
+    background-color:#fff;
+}
+
+.app .gridtable {
+float: left;
+/*
+-webkit-border-radius: 4px;
+border-radius: 4px;
+border-collapse: separate;
+    
+border:1px solid #eee;
+    
+    */
+}
+
+.app .gridtable td:nth-child(1),.app .gridtable td:nth-child(2){font-weight:bold}
+
+.app .gridtable thead tr{
+background: #d6d6d6; /* Old browsers */
+background: -moz-linear-gradient(top,  #d6d6d6 0%, #ffffff 70%, #ffffff 99%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d6d6d6), color-stop(70%,#ffffff), color-stop(99%,#ffffff)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #d6d6d6 0%,#ffffff 70%,#ffffff 99%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #d6d6d6 0%,#ffffff 70%,#ffffff 99%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #d6d6d6 0%,#ffffff 70%,#ffffff 99%); /* IE10+ */
+background: linear-gradient(to bottom,  #d6d6d6 0%,#ffffff 70%,#ffffff 99%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d6d6d6', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+border-bottom:1px solid #eee;
+border-top:1px solid #eee;
+}
+
+h3 {
+    font-family: 'uscorergh';
+    font-size: 20px;
+    line-height:20px;
+}
+
+table.gridtable {
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    max-width:700px;
+}
+table.gridtable th {
+    padding: 8px;
+    font-weight:bold;
+}
+table.gridtable td {
+    padding: 8px;
+}
+
+table.gridtable tr:hover {
+    background-color:#efefef;
+    cursor: pointer;
+}
+
+tr:nth-child(even)    { background-color:#f1f1f1; }
+tr:nth-child(odd)    { background-color:#fff; }
+
+tr:hover td { background-color:#a90000 !important; color:#fff !important;}
+
+ul#driverTracker{
+    float: right;
+    width:300px;
+    border:1px solid green;
+}
+li {
+    border: 1px solid #999;
+    margin: 5px 0px;
+    display: block;
+    float: left;
+    width: 100%;
+    clear: left;
+}
+
+#driverTracker img{
+    float:left;
+}
+
+@media only screen and (max-width: 800px) {
+    table td:nth-child(3), 
+    table th:nth-child(3) {display: none;}
+}
+ 
+@media only screen and (max-width: 640px) {
+    table td:nth-child(4),
+    table th:nth-child(4),
+    table td:nth-child(7),
+    table th:nth-child(7),
+    table td:nth-child(8),
+    table th:nth-child(8){display: none;}
+}
+
+
+
+  </style>
+  
+</head>
+<body>
+  <div class="app">
+
+<section id="rt-leaderboard">
+<h3>LEADERBOARD</h3>
+<table dir="ltr" id="leaderboard" class="gridtable">
+    <thead>
+        <tr>
+            <th scope="col">Pos</th>
+            <th scope="col">Driver</th>
+            <th scope="col">#</th>
+            <th scope="col">Laps</th>
+            <th scope="col">Speed</th>
+            <th scope="col">Time</th>
+            <th scope="col">Behind</th>
+            <th scope="col">Led</th>
+            <th scope="col">MFG</th>
+        </tr>
+    </thead>
+</table>
+    
+</section>
+
+<ul id="driverTracker">
+    
+    <li>
+        <img src="http://static.foxsports.com/fe/images/NASCAR/Headshots/140x170/87.jpg" width="70" height="85" border="0" alt="Tony Stewart, NASCAR, Foxsports.com" onerror="this.src='/fe/images/defaultPlayer140x170.jpg'">
+        <span>CURRENT POSITION 1</span><br/>
+        <span>STARTING POSITION 1</span>
+        
+    </li>
+</ul>
+
+</div>
+
+<script id="leaderboarddriver-template" type="text/x-handlebars-template">
+        <td>{{pos}}</td>
+        <td>{{name}}</td>
+        <td>{{number}}</td>
+        <td>{{laps}}</td>
+        <td>{{speed}}</td>
+        <td>{{time}}</td>
+        <td>{{behind}}</td>
+        <td>{{led}}</td>
+        <td>{{MFG}}</td>
+</script>
+
+<script id="trackerdriver-template" type="text/x-handlebars-template">
+    <span>{{pos}}</span><span>  {{name}}</span>
+</script>
+
+
+
+
+  
+
+
+<script type='text/javascript'>
+
+//helper
+var template = function(id){
+    return Handlebars.compile($('#' + id).html()); 
+}
+
+//driver model
+var Driver = Backbone.Model.extend({
+});
+
+//collection
+var DriverCollection = Backbone.Collection.extend({
+    model : Driver
+});
+
+//leaderboarddriver view
+var LeaderboardDriverView = Backbone.View.extend({
+    
+    tagName: 'tr',
+    
+    events : {
+        'click' : 'trackDriver'
+    },
+    
+    template: template('leaderboarddriver-template'),
+    initialize : function(){
+    },
+    render: function(){
+        this.$el.html(this.template(this.model.toJSON()));
+        return this;
+    },
+    trackDriver : function(){
+        var trackerDriverView = new TrackerDriverView({model : this.model});
+        $('#driverTracker').append(trackerDriverView.render().el);
+    }
+    
+});
+
+
+//leaderboard view
+var LeaderboardView = Backbone.View.extend({
+    
+    tagName: 'tbody',
+    render : function(){
+        //iterate collection
+        this.collection.each(this.addOne,this);
+        return this;
+        
+    },
+    addOne : function(driver){
+        var driverView = new LeaderboardDriverView({model : driver });
+        this.$el.append(driverView.render().el);
+    }
+});
+
+var TrackerDriverView = Backbone.View.extend({
+
+    tagName:'li',
+    template: template('trackerdriver-template'),
+    render: function(){
+        this.$el.html(this.template(this.model.toJSON()));
+        return this;
+    }        
+
+});
+
+
+var allDrivers = new DriverCollection([
+    {pos:1,name:'Jimmy Johnson',number:12,laps:123,speed:143,time:34,behind:'Leader',led:12,MFG:'Chevrolet'},
+    {pos:2,name:'Kyle Bush',number:8,laps:453,speed:453,time:36,behind:1,led:12,MFG:'Chevrolet'},
+    {pos:3,name:'Clint Bowyer',number:8,laps:453,speed:453,time:36,behind:1,led:12,MFG:'Chevrolet'},
+    {pos:4,name:'Greg Biffle',number:8,laps:453,speed:453,time:36,behind:1,led:12,MFG:'Chevrolet'},
+    {pos:5,name:'Martin Truex',number:8,laps:453,speed:453,time:36,behind:1,led:12,MFG:'Chevrolet'},
+    {pos:6,name:'Kevin Harvick',number:8,laps:453,speed:453,time:36,behind:1,led:12,MFG:'Chevrolet'},
+    {pos:7,name:'Paul Menard',number:8,laps:453,speed:453,time:36,behind:1,led:12,MFG:'Chevrolet'},
+    {pos:8,name:'Carl Edwards',number:8,laps:453,speed:453,time:36,behind:1,led:12,MFG:'Chevrolet'},
+    {pos:9,name:'Joey Logano',number:8,laps:453,speed:453,time:36,behind:1,led:12,MFG:'Chevrolet'}
+]);
+
+var lbView = new LeaderboardView({collection : allDrivers});
+$('#leaderboard').append(lbView.render().el);
+
+
+</script>
+
+
+</body>
+
+
+</html>
