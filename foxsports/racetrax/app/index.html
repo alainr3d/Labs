@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+        <link rel="stylesheet" href="fonts.css" type="text/css" />
+        <style>
+            * {font-family:'uscorergh',arial;
+                font-size:11px;
+                color:#333333;
+                }
+                
+                table.gridtable {
+                    font-size:11px;
+                    color:#333333;
+                    border-width: 1px;
+                    border-color: #666666;
+                    border-collapse: collapse;
+                }
+                table.gridtable th {
+                    border-width: 1px;
+                    padding: 8px;
+                    border-style: solid;
+                    border-color: #999;
+                    background-color: #dedede;
+                }
+                table.gridtable td {
+                    border-width: 1px;
+                    padding: 8px;
+                    border-style: solid;
+                    border-color: #aaa;
+                }
+                
+                table.gridtable tr:hover {
+                    background-color:yellow;
+                    cursor: pointer;
+                }
+                
+                ul{
+                    float: left;
+                    margin-top: 10px;
+                }
+                li {
+                border: 1px solid #999;
+                margin: 5px 0px;
+                list-style:none;
+                }
+
+        </style>
+    </head>
+    <body>
+    
+    <table dir="ltr" id="leaderboard" class="gridtable">
+        <thead>
+            <tr>
+                <th scope="col">Pos</th>
+                <th scope="col">Driver</th>
+                <th scope="col">#</th>
+                <th scope="col">Laps</th>
+                <th scope="col">Speed</th>
+                <th scope="col">Time</th>
+                <th scope="col">Behind</th>
+                <th scope="col">Led</th>
+                <th scope="col">MFG</th>
+            </tr>
+        </thead>
+    </table>
+    
+    <ul id="driverTracker">
+    </ul>
+    
+    
+    <script id="leaderboarddriver-template" type="text/x-handlebars-template">
+            <td>{{pos}}</td>
+            <td>{{name}}</td>
+            <td>{{number}}</td>
+            <td>{{laps}}</td>
+            <td>{{speed}}</td>
+            <td>{{time}}</td>
+            <td>{{behind}}</td>
+            <td>{{led}}</td>
+            <td>{{MFG}}</td>
+    </script>
+    
+    <script id="trackerdriver-template" type="text/x-handlebars-template">
+        <span>{{pos}}</span><span>  {{name}}</span>
+    </script>
+    
+    <script src="jquery.js"></script>
+    <script src="underscore.js"></script>
+    <script src="backbone.js"></script>
+    <script src="handlebars.js"></script>
+    <script>
+    //helper
+    var template = function(id){
+        return Handlebars.compile($('#' + id).html()); 
+    }
+    
+    //driver model
+    var Driver = Backbone.Model.extend({
+    });
+    
+    //collection
+    var DriverCollection = Backbone.Collection.extend({
+        model : Driver
+    });
+    
+    //leaderboarddriver view
+    var LeaderboardDriverView = Backbone.View.extend({
+        
+        tagName: 'tr',
+        
+        events : {
+            'click' : 'trackDriver'
+        },
+        
+        template: template('leaderboarddriver-template'),
+        initialize : function(){
+        },
+        render: function(){
+            this.$el.html(this.template(this.model.toJSON()));
+            return this;
+        },
+        trackDriver : function(){
+            var trackerDriverView = new TrackerDriverView({model : this.model});
+            $('#driverTracker').append(trackerDriverView.render().el);
+        }
+        
+    });
+    
+    
+    //leaderboard view
+    var LeaderboardView = Backbone.View.extend({
+        
+        tagName: 'tbody',
+        render : function(){
+            //iterate collection
+            this.collection.each(this.addOne,this);
+            return this;
+            
+        },
+        addOne : function(driver){
+            var driverView = new LeaderboardDriverView({model : driver });
+            this.$el.append(driverView.render().el);
+        }
+    });
+    
+    var TrackerDriverView = Backbone.View.extend({
+    
+        tagName:'li',
+        template: template('trackerdriver-template'),
+        render: function(){
+            this.$el.html(this.template(this.model.toJSON()));
+            return this;
+        }        
+    
+    });
+    
+    
+    var allDrivers = new DriverCollection([
+        {pos:1,name:'Jimmy Johnson',number:12,laps:123,speed:143,time:34,behind:'Leader',led:12,MFG:'Chevrolet'},
+        {pos:2,name:'Kyle Bush',number:8,laps:453,speed:453,time:36,behind:1,led:12,MFG:'Chevrolet'}
+    ]);
+    
+    var lbView = new LeaderboardView({collection : allDrivers});
+    $('#leaderboard').append(lbView.render().el);
+    
+    
+        (function($, exports){
+
+            console.log($);
+            
+            
+        })(jQuery,window);
+    </script>
+    </body>
+</html>
