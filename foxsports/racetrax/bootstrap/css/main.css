@@ -1,0 +1,405 @@
+body{
+    background-color:#dedede;
+    padding:0px;
+    font-family:'lucida grande',tahoma,verdana,arial,sans-serif;
+    font-size:11px;
+    padding-top:10px;
+}
+
+.page
+{
+    max-width:984px;
+    min-width:320px;
+    margin:0 auto;
+    padding:0px !important;
+    background-color:#fff;
+}
+
+
+.body-content{
+    max-width:880px !important;
+    padding-right:330px;
+    width:auto;
+}
+.body-content article{
+    background-color:white;
+    float:left;
+}
+.body-content aside{
+    width:320px;
+    float:left;
+    margin-right:-320px;
+}
+
+.body-content aside > * {
+    float:left;
+}
+header h1{
+    font-family:'uscorergh',helvetica,sans-serif;
+    float:left;
+    margin:0;
+    margin-left:10px;
+    margin-top:5px;
+    font-style:italic;
+}
+header h2{
+    font-family:'uscorergh',helvetica,sans-serif;
+    font-weight:normal;
+    float:left;
+    clear:left;
+    margin:0;
+    font-size:20px;
+    margin-left:10px;
+}
+header .select-race{
+    float:right;
+    margin-right:10px;
+    margin-top:10px;
+    
+}
+header .select-race .dropdown-menu{
+    right:0;
+    left:auto;
+}
+header .race-description{
+    float:right;
+    margin-top:10px;
+    margin-right:10px;
+    line-height:1.2em;
+    text-align:right;
+    color: #989898;
+}
+
+.page article > * {
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.race-tabs{
+    font-family:'uscorergh';
+    color:#999;
+    font-weight:normal;
+}
+
+.race-tabs.nav-tabs a {
+    color: #989898;
+}
+
+.race-tabs.nav-tabs > li > a, .nav-tabs > a {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    color: #333;
+}
+
+.inside-trax{
+    margin:0 10px;
+}
+
+.leaderboard table tr:hover{
+        cursor: pointer;
+}
+
+
+.leaderboard table tbody tr.clicked td{
+    background-color:#a90000 !important;
+    color:#fff;
+}
+
+article h3{
+    font-family:'uscorergh';
+    font-size:20px;
+    border-bottom:5px solid #efefef;
+}
+
+aside .modal{
+    position:relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    width: 320px;
+    margin: 0 auto;
+    margin-bottom:10px;
+    z-index:auto;
+    /*font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+    
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.modal .modal-header{
+    padding-top:4px;
+    padding-bottom:4px;
+}
+
+.modal h3{
+    font-size:15px;
+    font-family:'uscoresek';
+    font-weight:normal;
+}
+aside .modal.driver-tracker{
+    width:320px;
+    overflow:hidden;
+}
+aside .modal.driver-tracker .modal-header{
+    border-bottom:none;
+}
+aside .modal.driver-tracker > .modal-body {
+    padding:0px;
+    padding-bottom:10px;
+    max-height:100%;
+    width:320px;
+    overflow:hidden;
+}
+
+aside .modal.driver{
+    border-radius:0px;
+    border-right:none;
+    border-left:none;
+    border-bottom:1px solid #cbcbcb;
+    margin-bottom:0px;
+    
+    background: #f9f9f9;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f9f9f9), color-stop(100%, #eaeaea));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #f9f9f9 0%, #eaeaea 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, #f9f9f9 0%, #eaeaea 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#eaeaea', GradientType=0);
+    /* IE6-9 */
+    
+    -webkit-animation:fadeIn ease-in 1;
+    -moz-animation:fadeIn ease-in 1;
+    -o-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+    -webkit-animation-duration:0.3s;
+    -moz-animation-duration:0.3s;
+    -o-animation-duration:0.3s;
+    animation-duration:0.3s;
+}
+@-webkit-keyframes fadeIn {
+    from {
+        opacity:0;
+        margin-left:20px
+    }
+    to {
+        opacity:1;
+        margin-left:0px
+    }
+}
+@-moz-keyframes fadeIn {
+    from {
+        opacity:0;
+        margin-left:20px
+    }
+    to {
+        opacity:1;
+        margin-left:0px
+    }
+}
+@-o-keyframes fadeIn {
+    from {
+        opacity:0;
+        margin-left:20px;
+    }
+    to {
+        opacity:1;
+        margin-left:0px;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity:0;
+        margin-left:20px;
+    }
+    to {
+        opacity:1;
+        margin-left:0px;
+    }
+}
+
+aside .modal.driver.remove{
+    
+    -webkit-animation:fadeOut ease-in 1;
+    -moz-animation:fadeOut ease-in 1;
+    -o-animation:fadeOut ease-in 1;
+    animation:fadeOut ease-in 1;
+    -webkit-animation-duration:0.3s;
+    -moz-animation-duration:0.3s;
+    -o-animation-duration:0.3s;
+    animation-duration:0.3s;
+    
+}
+@-webkit-keyframes fadeOut {
+    from {
+        opacity:1;
+        margin-right:0px;
+    }
+    to {
+        opacity:0;
+        margin-left:-320px;
+    }
+}
+@-moz-keyframes fadeOut {
+    from {
+        opacity:1;
+        margin-right:0px;
+    }
+    to {
+        opacity:0;
+        margin-left:320px;
+        
+    }
+}
+@-o-keyframes fadeOut {
+    from {
+        opacity:1;
+        margin-right:0px;
+    }
+    to {
+        opacity:0;
+        margin-left:320px;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity:1;
+        margin-right:0px;
+    }
+    to {
+        opacity:0;
+        margin-left:320px;
+    }
+}
+
+aside .modal.driver h3{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+aside .modal.driver > .modal-body{
+    padding-top:5px;
+    padding-bottom:10px;
+}
+aside .modal.driver .headshot{
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+}
+
+aside .modal.driver > .modal-body > p > *{
+    padding-left:5px;
+}
+
+aside .modal.driver .position{
+    font-family: 'uscorergh';
+    background-color: #A00;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    margin-top: 10px;
+    display: block;
+    padding-left: 5px;
+    text-indent: 5px;
+    border-bottom-right-radius: 5% 100%;
+    font-style: italic;
+}
+
+
+
+
+
+@media screen and (max-width: 480px) { 
+    .body-content{
+        max-width:auto;
+        padding-right:0px;
+        width:auto;
+    }
+    .body-content aside{
+    float:none;
+    margin: 0 auto;
+    }
+    
+    header * {
+        text-align:center;
+    }
+    
+    header h1{
+        font-family:'uscorergh',helvetica,sans-serif;
+        float:none;
+        margin:0 auto;
+    }
+    header h2{
+        font-family:'uscorergh',helvetica,sans-serif;
+        font-weight:normal;
+        float:none;
+        clear:left;
+        margin:0 auto;
+        font-size:20px;
+    }
+    header .select-race{
+        float:none;
+        margin:0 auto;
+        display:block;
+    }
+    header .select-race .dropdown-menu{
+        left:30px;
+        right:auto;
+    }
+    
+    header .race-description{
+        float:none;
+        margin:0 auto;
+        text-align:center;
+    }
+    
+    article {
+        margin-top:10px;
+    }
+    
+    .race-tabs.nav-tabs a {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    
+    .leaderboard table td:nth-child(3), 
+    .leaderboard table th:nth-child(3) {display: none;}
+    
+    
+    
+}
+
+@media screen and (max-width: 680px) { 
+    
+    .body-content{
+        max-width:auto;
+        padding-right:0px;
+        width:auto;
+    }
+    .body-content aside{
+        float:none;
+        margin: 0 auto;
+    }
+    
+}
+
+@media only screen and (max-width: 802px){
+    table td:nth-child(4),
+    table th:nth-child(4),
+    table td:nth-child(7),
+    table th:nth-child(7),
+    table td:nth-child(8),
+    table th:nth-child(8){display: none;}
+}
+
+@media only screen and (max-width: 870px) {
+    .leaderboard table td:nth-child(3), 
+    .leaderboard table th:nth-child(3) {display: none;}
+}

@@ -1,0 +1,25 @@
+html,body{
+    padding:0px;
+    margin:0px;
+    height:100%;
+}
+
+.app
+{
+   border:5px solid gray;
+   border-radius:100%;
+    
+   position   :  fixed;
+   top        :  50%;
+   left       :  50%;
+   height     :  auto;
+   width      :  auto;           
+   margin-left:  -80px;
+   margin-top :  -80px;
+   border     :  1px solid #000;
+   padding    :10%;
+    
+}
+.app h1{
+    text-align:center;
+}

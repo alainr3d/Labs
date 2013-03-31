@@ -1,0 +1,38 @@
+<script id="analytics-variables" type="text/x-fs-data" data-analytics='[
+    "account=${tealiumData['tealiumAccount']}",
+    "cms_id=${tealiumData['cmsId']}",
+    "site=${tealiumData['domainName']}",
+    <c:if test="${not empty tealiumData['pageName']}">
+        "page_name=${tealiumData['pageName']}",
+        "page_file_name=${tealiumData['pageName']}",
+    </c:if>
+    <c:if test="${empty tealiumData['pageName']}">
+        "page_name=${tealiumData['pagePath']}",
+        "page_file_name=${tealiumData['pagePath']}",
+    </c:if>
+    "page_category=${tealiumData['pageCategory']}",
+    "page_super_type=${tealiumData['pageSuperType']}",
+    "page_type=blog",
+	"page_type_alias=",
+    "page_id=${tealiumData['pageId']}",
+    "page_topic=${tealiumData['pageTopic']}",
+    "article_title=${tealiumData['articleTitle']}",
+    "article_author=${tealiumData['articleAuthor']}",
+    "article_publish_date=${tealiumData['articlePublishDate']}",
+    "article_source=${tealiumData['articleSource']}",
+    "article_page_number=${tealiumData['articlePageNumber']}",
+    "matchup=",
+    "team=",
+    "player="
+ ]'>
+ 
+ fsAnalyticsDescription = 
+ "account=${tealiumData['tealiumAccount']}
+ cms_id=${tealiumData['pagePath']}&
+ category=${tealiumData['pageCategory']}&
+ page_type=blog&
+ page_type_alias=&
+ filename=${tealiumData['pagePath']}&
+ source=${tealiumData['siteTitle']}&
+ publish_date=${tealiumData['publishDate']}";
+ console.log("fsAnalyticsDescription " + fsAnalyticsDescription);

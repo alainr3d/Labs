@@ -1,0 +1,10 @@
+{"ts":1364258828420,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1364258840910,"patch":[[{"diffs":[[1,"console.log('loaded main');"]],"start1":0,"start2":0,"length1":0,"length2":27}]],"length":27,"saved":false}
+{"ts":1364258898563,"patch":[[{"diffs":[[0," main');"],[1," "]],"start1":19,"start2":19,"length1":8,"length2":9}]],"length":28,"saved":false}
+{"ts":1364258963357,"patch":[[{"diffs":[[1,"require.config({\n  paths: {\n    jquery: 'libs/jquery-1.8.3.min',\n    underscore: 'libs/underscore-amd',\n    backbone: 'libs/backbone-amd'\n  }\n});\n\n"],[0,"console."]],"start1":0,"start2":0,"length1":8,"length2":155}]],"length":175,"saved":false}
+{"ts":1364258988828,"patch":[[{"diffs":[[0," }\n});\n\n"],[1,"require('backbone'],function(Backbone){\n    //\n}); \n\n"],[0,"console."]],"start1":139,"start2":139,"length1":16,"length2":69}]],"length":228,"saved":false}
+{"ts":1364259083581,"patch":[[{"diffs":[[0,"ire("],[-1,"'"],[0,"backbone"],[-1,"'"],[0,"],fu"]],"start1":151,"start2":151,"length1":18,"length2":16}]],"length":226,"saved":false}
+{"ts":1364259104293,"patch":[[{"diffs":[[0,"require("],[1,"["],[0,"backbone"]],"start1":147,"start2":147,"length1":16,"length2":17}]],"length":227,"saved":false}
+{"ts":1364259115795,"patch":[[{"diffs":[[0,"equire(["],[1,"'"],[0,"backbone"],[1,"''"],[0,"],functi"]],"start1":148,"start2":148,"length1":24,"length2":27}]],"length":230,"saved":false}
+{"ts":1364259130730,"patch":[[{"diffs":[[0,"bone"],[-1,"''"],[0,"],fu"]],"start1":161,"start2":161,"length1":10,"length2":8},{"diffs":[[0,"\n    //\n"],[1,"    \n"],[0,"}); \n\nco"]],"start1":186,"start2":186,"length1":16,"length2":21}]],"length":233,"saved":false}
+{"ts":1364259133655,"patch":[[{"diffs":[[0,"backbone"],[1,"'"],[0,"],functi"]],"start1":157,"start2":157,"length1":16,"length2":17}]],"length":234,"saved":false}

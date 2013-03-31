@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        
+        <title>Test</title>
+        <link rel="stylesheet" href="css/libs/normalize.css">
+        <style>
+            html,body {height:100%; width:100%;margin:0;padding:0;overflow:hidden;}
+            .app,.content{height:100%;width:100%;position:relative;}
+            
+            .content{
+                margin-left:0%;
+                
+                
+                transition: margin-left 0.5s ease-in-out;
+                -moz-transition: margin-left 0.5s; /* Firefox 4 */
+                -webkit-transition: margin-left 0.5s ease-in-out; /* Safari and Chrome */
+                -o-transition: margin-left 0.5s; /* Opera */
+            }
+            
+            .content:hover{
+                margin-left:100%;
+            }
+            
+            .title{
+                text-align:center;
+                font-family:georgia;
+                font-weight:bold;
+                font-size:1.5em;
+                margin:3% 0;
+                color:#444;
+            }
+            
+            .results{
+                height:100%;
+                padding:4%;
+                padding-right:0%;
+                padding-top:0%;
+                width:100%;
+                position:absolute;
+                
+            }
+            
+            .box-main {
+                
+                
+                
+                width:94%;
+                height:25%;
+                border:1px solid #aaa;
+                background-image:url(http://static7.businessinsider.com/image/4d94aaa8cadcbb4669440000/chipotle.jpg);
+                background-size:100% 100%;
+                background-repeat:no-repeat;
+                border-radius:0.2em;   
+
+            }
+            .box{
+                width:45%;
+                height:20%;
+                float:left;
+                border:1px solid #999;
+                margin:4% 4% 0 0;
+                border-radius:0.2em;
+                background:url(http://deliciousaustin.files.wordpress.com/2008/11/pho-1108.jpg);
+                background-size:100% 100%;
+                background-repeat:no-repeat;
+                
+            }
+            
+            .dish-title{
+                margin:0;
+                color:#fff;
+                font-family:georgia;
+                font-size:1em;
+                margin-left:3%;
+                margin-top:3%;
+                text-shadow: 0.1em 0.1em #333;
+                font-weight:bold;
+            }
+            .dish-subtitle{
+                margin:0;
+                color:#eee;
+                font-family:georgia;
+                font-size:0.5em;
+                margin-left:3%;
+                text-shadow: 0.1em 0.1em #333;
+                font-weight:normal;
+            }
+            
+            .box-main .dish-title{
+                font-size:2em;
+            }
+            .box-main .dish-subtitle{
+                font-size:1em;
+            }
+            
+            .map{
+                
+                height:100%;
+                width:100%;
+                
+                float:left;
+                left:0;
+                position:absolute;
+                margin-left:-100%;
+                border-radius:0.2em;
+            }
+            .iframe-rwd  {
+            position: relative;
+            padding-bottom: 65.25%;
+            padding-top: 30px;
+            height: 36%;
+            overflow: hidden;
+            width:95%;
+            margin-left:2.5%;
+            
+            border-radius:0.2em;
+            border:1px solid #999;
+            }
+            .iframe-rwd iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        
+        <div class="app">
+            <h1 class="title">Today's Dishes near me</h1>
+        
+        <div class="content">
+            <section class="map">
+                <div class="iframe-rwd">
+                    <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;q=chipotle&amp;aq=&amp;sll=33.995892,-118.397255&amp;sspn=0.085535,0.158443&amp;ie=UTF8&amp;t=m&amp;st=109146043351405611748&amp;rq=1&amp;ev=zi&amp;split=1&amp;radius=5.45&amp;hq=chipotle&amp;hnear=&amp;ll=33.979355,-118.438002&amp;spn=0.085537,0.153122&amp;z=13&amp;iwloc=A&amp;cid=4704439912291507348&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;q=chipotle&amp;aq=&amp;sll=33.995892,-118.397255&amp;sspn=0.085535,0.158443&amp;ie=UTF8&amp;t=m&amp;st=109146043351405611748&amp;rq=1&amp;ev=zi&amp;split=1&amp;radius=5.45&amp;hq=chipotle&amp;hnear=&amp;ll=33.979355,-118.438002&amp;spn=0.085537,0.153122&amp;z=13&amp;iwloc=A&amp;cid=4704439912291507348" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+                </div>
+            </section>
+            
+            <section class="results">
+                <div class="box-main">
+                    <h2 class="dish-title">Chicken Burritto</h2>
+                    <h3 class="dish-subtitle">Chipotle Mexican Grill, 0.5 miles</h3>
+                </div>
+                <div class="box">
+                    <h2 class="dish-title">Chicken Burritto</h2>
+                    <h3 class="dish-subtitle">Chipotle Mexican Grill, 0.5 miles</h3>
+                </div>
+                <div class="box">
+                    <h2 class="dish-title">Chicken Burritto</h2>
+                    <h3 class="dish-subtitle">Chipotle Mexican Grill, 0.5 miles</h3>
+                </div>
+                <div class="box">
+                    <h2 class="dish-title">Chicken Burritto</h2>
+                    <h3 class="dish-subtitle">Chipotle Mexican Grill, 0.5 miles</h3>
+                </div>
+                <div class="box">
+                    <h2 class="dish-title">Chicken Burritto</h2>
+                    <h3 class="dish-subtitle">Chipotle Mexican Grill, 0.5 miles</h3>
+                </div>
+                <div class="box">
+                    <h2 class="dish-title">Chicken Burritto</h2>
+                    <h3 class="dish-subtitle">Chipotle Mexican Grill, 0.5 miles</h3>
+                </div>
+                <div class="box">
+                    <h2 class="dish-title">Chicken Burritto</h2>
+                    <h3 class="dish-subtitle">Chipotle Mexican Grill, 0.5 miles</h3>
+                </div>
+            </section>
+        
+        </div>
+        </div>
+    </body>
+</html>
