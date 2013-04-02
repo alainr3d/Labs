@@ -1,6 +1,7 @@
 define([
-    'backbone'
-],function(Backbone){
+    'backbone',
+    'models/dishModel'
+],function(Backbone,DishModel){
     
     /*
     var Filter = Backbone.Model.extend({
@@ -13,10 +14,12 @@ define([
     });
     */
     
-    var DishModel = Backbone.Model.extend({
+    var DishCollection = Backbone.Model.extend({
+            
+        model : DishModel
         
     });
     
-    return DishModel;
+    return DishCollection;
     
 });

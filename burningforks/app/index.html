@@ -4,18 +4,33 @@
     <title>BF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
     <!-- Custom styles -->
     <link rel="stylesheet" type="text/css" href="css/libs/normalize.css" media="all"/>
     <link rel="stylesheet" type="text/css" href="css/app.css" media="all"/>
 
     
-    
-</head>
+</head> 
 <body>
     <div class="container">
-        <h1>Dishes</h1>
+        <header class="header">
+            <div class="search">
+                <h1>Today's Dishes</h1>
+                <form id="search-box" action="http://designmodo.com/search/" method="get" target="_top">
+    			   <input type="text" name="q" class="search-input">
+			   	</form>
+            </div>
+        </header>
     </div>
+    
+    <!-- templates -->
+    <script id="dish-template" type="text/x-handlebars-template">
+            <h2>{{title}}</h2>
+            <h3>{{restaurant}}</h3>
+            <p>{{miles}}</p>
+    </script>
+    
     <script data-main="js/main" src="js/libs/require.js"></script>
+    
+    
 </body>
 </html>

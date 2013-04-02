@@ -1,16 +1,22 @@
 define([
-    'backbone'
-],function(Backbone){
+    'backbone',
+    'helpers'
+],function(Backbone,Helpers){
     
     var DishView = Backbone.View.extend({
         
-        tagName : 'div',
+        tagName : 'article',
+        template: Helpers.template('dish-template'),
         events : {
             'click h2' : function(){console.log('clicked');return false;}
         },
         render : function(){
             
-            this.$el.html('<h2>dish view</h2>');
+            var model = this.model.toJSON();
+            console.log(model.primaryImage);
+            this.$el.addClass('dish')
+                .css('background-image','url('+model.primaryImage+')')
+                .html(this.template(model));
             
             return this;
         }
